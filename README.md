@@ -406,7 +406,7 @@ t('root', 'does-not-exist', null, undefined, 'another one');
 ```
 
 
-Advanded `className` and `style` and conditional mix, the real power of the library.
+Advanced `className` and `style` and conditional mix, the real power of the library.
 ```js
 describe('advanced classnames with classnames module', () => {
   const styles = {
