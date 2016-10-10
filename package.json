@@ -1,7 +1,7 @@
 {
   "name": "react-themeable-ts",
-  "version": "0.1.0",
-  "description": "Same library as react-themeable but written in typescript with typings and a HOC",
+  "version": "0.1.1",
+  "description": "Handle classname and style props in React",
   "homepage": "https://github.com/beckend/react-themeable-ts#readme",
   "repository": {
     "type": "git",
