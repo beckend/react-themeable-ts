@@ -51,7 +51,8 @@
   "keywords": [
     "typescript",
     "react",
-    "style"
+    "style",
+    "classname"
   ],
   "author": "Linken Dinh",
   "license": "ISC",
