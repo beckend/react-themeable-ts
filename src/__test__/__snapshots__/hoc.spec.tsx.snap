@@ -1,0 +1,66 @@
+exports[`HOC as function no arguments 1`] = `
+<div
+  className="class-root">
+  <span
+    className="class-span1">
+    My test SFC component
+  </span>
+  <p
+    className="class-p1">
+    My test SFC component
+  </p>
+</div>
+`;
+
+exports[`HOC as function with custom arguments 1`] = `
+<div
+  className="class-root">
+  <span
+    className="class-span1">
+    My test SFC component
+  </span>
+  <p
+    className="class-p1">
+    My test SFC component
+  </p>
+</div>
+`;
+
+exports[`HOC basic functionality passed all props 1`] = `
+<div>
+  My str: 
+  ok
+  My bool: 
+  true
+  My number: 
+  1338
+</div>
+`;
+
+exports[`HOC on class decorates class as a decorator 1`] = `
+<div
+  className="class-root">
+  <span
+    className="class-span1">
+    My test SFC component
+  </span>
+  <p
+    className="class-p1">
+    My test SFC component
+  </p>
+</div>
+`;
+
+exports[`HOC on class decorates class as a function 1`] = `
+<div
+  className="class-root">
+  <span
+    className="class-span1">
+    My test SFC component
+  </span>
+  <p
+    className="class-p1">
+    My test SFC component
+  </p>
+</div>
+`;

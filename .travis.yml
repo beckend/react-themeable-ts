@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 6
+
+before_script:
+  - npm install -g gulp-cli jest-cli
+
+script:
+  - gulp lint:all && npm test
+
+sudo: false
+
+notifications:
+  email: false

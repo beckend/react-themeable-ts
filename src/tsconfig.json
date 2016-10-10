@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "strictNullChecks": true,
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "jsx": "react",
+        "declaration": true,
+        "diagnostics": true,
+        "outDir": "./../build"
+    },
+    "include": [
+        "./**/*.ts",
+        "./**/*.tsx"
+    ],
+    "exlcude": [
+        "./**/*.spec.ts",
+        "./**/*.spec.tsx"
+    ]
+}

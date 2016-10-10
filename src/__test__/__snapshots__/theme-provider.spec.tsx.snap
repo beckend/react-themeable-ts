@@ -1,0 +1,19 @@
+exports[`theme-provider context tests basic pass all props 1`] = `
+<div>
+  context string
+</div>
+`;
+
+exports[`theme-provider context with HOC test should get the correct context key and render theme 1`] = `
+<div
+  className="class-root">
+  <span
+    className="class-span1">
+    My test SFC component
+  </span>
+  <p
+    className="class-p1">
+    My test SFC component
+  </p>
+</div>
+`;

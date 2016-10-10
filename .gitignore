@@ -1,0 +1,7 @@
+.vscode
+coverage
+node_modules
+npm-debug.log
+src/**/*.js
+src/**/*.map
+tmp
