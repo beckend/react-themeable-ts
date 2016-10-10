@@ -483,7 +483,7 @@ Accepts single argument and is an object with props:
 |:---|:---|:---|:---
 | themeKey(optional) | `theme` | `string` | The prop the HOC will use as argument for themeable. |
 | themeProp(optional) | `t` | `string` | The prop name passed prop to DecoratedComponent as the returned themeable function. |
-| memoizeeOpts(optional) | `` length: 1, max: 10 }` | Object | options passed to [memoizee](https://github.com/medikoo/memoizee) function. |
+| memoizeeOpts(optional) | `{ length: 1, max: 10 }` | Object | options passed to [memoizee](https://github.com/medikoo/memoizee) function. |
 | context(optional) | false | `boolean` | Tells the component to look for the theme under the default context prop which is `reactThemeable` |
 | contextPath(optional/required) | `string`/`string[]` | 'reactThemeable' | Only used as a path variable to navigate in context when context is enabled. It accepts [object-path get method argument](https://github.com/mariocasciaro/object-path) to navigate in `context` prop. |
 
