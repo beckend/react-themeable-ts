@@ -231,7 +231,7 @@ import { themeDecorator } from 'react-themeable-ts';
   // Rename default `t` to something else
   themeProp: 'myThemeableFn',
 })
-class MyComponent extend PureComponent {
+class MyComponent extends PureComponent {
 
   render() {
     const theme = props.myThemeableFn;
