@@ -186,21 +186,26 @@ When decorating a stateless function/Class the defaults are:
 
 Defaults
 ```js
+import { PureComponent } from 'react;
 import { themeDecorator } from 'react-themeable-ts';
 
 @themeDecorator()
-class MyComponent {
-  const theme = props.t;
-  return (
-    <div {...theme('root')}>
-      <span {...theme('span1')}>
-        My test SFC component
-      </span>
-      <p {...theme('p1')}>
-        My test SFC component
-      </p>
-    </div>
-  );
+class MyComponent extends PureComponent {
+
+  render() {
+    const theme = props.t;
+    return (
+      <div {...theme('root')}>
+        <span {...theme('span1')}>
+          My test SFC component
+        </span>
+        <p {...theme('p1')}>
+          My test SFC component
+        </p>
+      </div>
+    );
+  }
+
 };
 
 // Component used
@@ -217,6 +222,7 @@ const MyJSXElement = (
 
 With custom options
 ```js
+import { PureComponent } from 'react;
 import { themeDecorator } from 'react-themeable-ts';
 
 @themeDecorator({
@@ -225,18 +231,22 @@ import { themeDecorator } from 'react-themeable-ts';
   // Rename default `t` to something else
   themeProp: 'myThemeableFn',
 })
-class MyComponent {
-  const theme = props.myThemeableFn;
-  return (
-    <div {...theme('root')}>
-      <span {...theme('span1')}>
-        My test SFC component
-      </span>
-      <p {...theme('p1')}>
-        My test SFC component
-      </p>
-    </div>
-  );
+class MyComponent extend PureComponent {
+
+  render() {
+    const theme = props.myThemeableFn;
+    return (
+      <div {...theme('root')}>
+        <span {...theme('span1')}>
+          My test SFC component
+        </span>
+        <p {...theme('p1')}>
+          My test SFC component
+        </p>
+      </div>
+    );
+  }
+
 };
 
 // Component used
@@ -258,10 +268,10 @@ It accepts one single prop `reactThemeable` as an object which you can freely ne
 
 ### Examples:
 ```js
-import React from 'react';
+import { PureComponent } from 'react';
 import { ThemeProvider } from 'react-themable-ts';
 
-class App extends React.PureComponent {
+class App extends PureComponent {
 
   render() {
     return (
