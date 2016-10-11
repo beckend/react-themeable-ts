@@ -11,7 +11,12 @@ gulp.task('prepare:publish', (gV4.series(
     'lint:all',
   ),
 
-  'coverage',
-  'build:all',
-  'minify:all'
+  gV4.parallel(
+    'coverage',
+
+    gV4.series(
+      'build:all',
+      'minify:all'
+    )
+  )
 )));
