@@ -268,7 +268,7 @@ It accepts one single prop `reactThemeable` as an object which you can freely ne
 
 ### Examples:
 ```js
-import { PureComponent } from 'react';
+import { PureComponent, PropTypes } from 'react';
 import { ThemeProvider } from 'react-themable-ts';
 
 class App extends PureComponent {
@@ -303,13 +303,17 @@ const MyStatelessComponent = (props, context) => {
 
   );
 };
+MyStatelessComponent.contextTypes = {
+  reactThemeable: PropTypes.object.isRequired,
+};
 ```
 
 Usage with HOC:
 ```js
-// First decorate a component with HOC
 import { themeDecorator } from 'react-themeable-ts';
+import { PureComponent, PropTypes } from 'react';
 
+// First decorate a component with HOC
 const decoratorFn = themeDecorator({
   context: true,
   contextPath: ['reactThemeable', 'ComponentWithContext2'],
@@ -329,6 +333,9 @@ const ComponentWithContext = (props, context) => {
       </p>
     </div>
   );
+};
+MyStatelessComponent.contextTypes = {
+  reactThemeable: PropTypes.object.isRequired,
 };
 
 const MyDecoratedComponent = decoratorFn(ComponentWithContext);
