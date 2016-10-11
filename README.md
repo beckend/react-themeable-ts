@@ -186,7 +186,7 @@ When decorating a stateless function/Class the defaults are:
 
 Defaults
 ```js
-import { PureComponent } from 'react;
+import { PureComponent } from 'react';
 import { themeDecorator } from 'react-themeable-ts';
 
 @themeDecorator()
@@ -222,7 +222,7 @@ const MyJSXElement = (
 
 With custom options
 ```js
-import { PureComponent } from 'react;
+import { PureComponent } from 'react';
 import { themeDecorator } from 'react-themeable-ts';
 
 @themeDecorator({
