@@ -9,7 +9,7 @@ Inpired by [react-themeable](https://github.com/markdalgleish/react-themeable) a
 
 
 Features:
-- Written in typescript and is typings are auto generated.
+- Written in typescript and typings are auto generated.
 - Unlike `react-themeable` does not handle `key` in returned payload at all. That means that radium users must manually supply `key` to their react elements. You are better off using [react-themeable](https://github.com/markdalgleish/react-themeable) instead.
 - Main function theme parameter can be empty, in case you do conditional stuff and it ends up being falsely.
 - You may mix classnames and style objects, they will be merged in the order you specify the arguments.
