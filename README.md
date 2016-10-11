@@ -360,6 +360,8 @@ class App extends React.PureComponent {
 `themeable` - Main function
 ```js
 import { themeable } from 'react-themeable-ts';
+// Or without react as dependency
+// import { themeable } from 'react-themeable-ts/themeable';
 ```
 Accepts any number of comma-separated values.
 Also accepts nothing, in case you do conditional stuff and it ends up being falsely.
