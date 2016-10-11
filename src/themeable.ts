@@ -116,7 +116,7 @@ export const themeable: IStaticFn = (input?: any) => {
   };
 
   return memoize(
-      regularFn,
-      themeableDefaultMemoizeeOpts
-    ) as typeof regularFn;
+    regularFn,
+    themeableDefaultMemoizeeOpts
+  ) as typeof regularFn;
 };
