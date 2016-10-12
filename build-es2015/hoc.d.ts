@@ -9,7 +9,6 @@ export interface IThemeDecoratorArgs {
     themeKey?: string;
     themeProp?: string;
     memoizeeOpts?: any;
-    context?: boolean;
     contextPath?: string | string[];
 }
 export interface IHOCDefaultNoThemeProps {
@@ -21,4 +20,4 @@ export interface IHOCDefaultProps extends IHOCDefaultNoThemeProps {
 /**
  * Main decorator
  */
-export declare function themeDecorator<P extends IThemeDecoratorArgs>({themeKey, themeProp, memoizeeOpts, context, contextPath}?: IThemeDecoratorArgs): (WrappedComponent: TDecComponent<P>) => any;
+export declare function themeDecorator<P extends IThemeDecoratorArgs>({themeKey, themeProp, memoizeeOpts, contextPath}?: IThemeDecoratorArgs): (WrappedComponent: TDecComponent<P>) => any;

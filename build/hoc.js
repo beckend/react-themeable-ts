@@ -31,31 +31,31 @@ var getThemeableFnDefaultMemoizeeOpts = {
 var hocDefaults = {
     themeKey: 'theme',
     themeProp: 't',
-    contextKey: constants_1.THEME_PROVIDER_CONTEXT_KEY,
 };
 /**
  * Main decorator
  */
 function themeDecorator(_a) {
-    var _b = _a === void 0 ? {
-        context: false,
-    } : _a, themeKey = _b.themeKey, themeProp = _b.themeProp, memoizeeOpts = _b.memoizeeOpts, context = _b.context, contextPath = _b.contextPath;
+    var _b = _a === void 0 ? {} : _a, themeKey = _b.themeKey, themeProp = _b.themeProp, memoizeeOpts = _b.memoizeeOpts, contextPath = _b.contextPath;
     var getThemeableFnMemoized = memoize(getThemeableFn, memoizeeOpts || getThemeableFnDefaultMemoizeeOpts);
     var passedThemePropToChild = themeProp || hocDefaults.themeProp;
     // tslint:disable-next-line
     return function (WrappedComponent) {
+        // New typings gave bug to components, had to cast it
+        // tslint:disable-next-line
+        var TargetComponent = WrappedComponent;
         // tslint:disable-next-line
         var HOCThemeable = (function (props, contextArg) {
-            var passedThemeableFn = getThemeableFnMemoized(context
+            var passedThemeableFn = getThemeableFnMemoized(contextPath
                 ?
-                    object_path_1.get(contextArg, contextPath || hocDefaults.contextKey)
+                    object_path_1.get(contextArg, contextPath)
                 :
                     props[themeKey || hocDefaults.themeKey]);
             var passedHOCProps = (_a = {},
                 _a[passedThemePropToChild] = passedThemeableFn,
                 _a
             );
-            return (React.createElement(WrappedComponent, __assign({}, passedHOCProps, props)));
+            return (React.createElement(TargetComponent, __assign({}, passedHOCProps, props)));
             var _a;
         });
         HOCThemeable.contextTypes = (_a = {},
