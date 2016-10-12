@@ -62,11 +62,8 @@ export function themeDecorator<P extends IThemeDecoratorArgs>({
 
   // tslint:disable-next-line
   return (WrappedComponent: TDecComponent<P>) => {
-    // New typings gave bug to components, had to cast it
     // tslint:disable-next-line
-    const TargetComponent: any = WrappedComponent;
-    // tslint:disable-next-line
-    const HOCThemeable: React.SFC<any> = ((props, contextArg: any) => {
+    const HOCThemeable: React.SFC<any> = ((props: any, contextArg: any) => {
       const passedThemeableFn = getThemeableFnMemoized(
         contextPath
           ?
@@ -79,7 +76,7 @@ export function themeDecorator<P extends IThemeDecoratorArgs>({
       };
 
       return (
-        <TargetComponent {...passedHOCProps} {...props} />
+        <WrappedComponent {...passedHOCProps} {...props} />
       );
     });
 

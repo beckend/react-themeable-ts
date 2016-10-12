@@ -21,7 +21,7 @@ export class ThemeProvider extends React.PureComponent<IThemeProviderProps, {}> 
 
   public getChildContext() {
     return {
-      [THEME_PROVIDER_CONTEXT_KEY]: this.props[THEME_PROVIDER_CONTEXT_KEY],
+      [THEME_PROVIDER_CONTEXT_KEY]: (this.props as any)[THEME_PROVIDER_CONTEXT_KEY],
     };
   }
 

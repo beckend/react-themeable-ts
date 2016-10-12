@@ -40,9 +40,6 @@ function themeDecorator({ themeKey, themeProp, memoizeeOpts, contextPath, } = {}
     const passedThemePropToChild = themeProp || hocDefaults.themeProp;
     // tslint:disable-next-line
     return (WrappedComponent) => {
-        // New typings gave bug to components, had to cast it
-        // tslint:disable-next-line
-        const TargetComponent = WrappedComponent;
         // tslint:disable-next-line
         const HOCThemeable = ((props, contextArg) => {
             const passedThemeableFn = getThemeableFnMemoized(contextPath
@@ -53,7 +50,7 @@ function themeDecorator({ themeKey, themeProp, memoizeeOpts, contextPath, } = {}
             const passedHOCProps = {
                 [passedThemePropToChild]: passedThemeableFn,
             };
-            return (React.createElement(TargetComponent, __assign({}, passedHOCProps, props)));
+            return (React.createElement(WrappedComponent, __assign({}, passedHOCProps, props)));
         });
         HOCThemeable.contextTypes = {
             [constants_1.THEME_PROVIDER_CONTEXT_KEY]: React.PropTypes.object,

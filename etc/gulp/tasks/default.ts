@@ -5,4 +5,7 @@ import * as gulp from 'gulp';
 
 const gV4: any = gulp;
 
-gulp.task('default',  gV4.parallel('prepare:publish'));
+gulp.task('default', gV4.series(
+  'monkey:compile-src-or-fail',
+  gV4.parallel('prepare:publish')
+));

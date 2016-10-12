@@ -14,7 +14,7 @@ const renderer = require('react-test-renderer');
 
 describe('theme-provider context tests', () => {
   it('basic pass all props', () => {
-    const ComponentWithContext1: React.SFC<{}> = (props, context: IThemeProviderContext) => {
+    const ComponentWithContext1: React.SFC<{}> = (props: any, context: IThemeProviderContext & any) => {
       return (
         <div>
           {context[THEME_PROVIDER_CONTEXT_KEY].mystr}
@@ -44,7 +44,7 @@ describe('theme-provider context with HOC test', () => {
   it('should get the correct context key and render theme', () => {
     interface IComponentWithContext2NoHOCProps {}
     interface IComponentWithContext2Props extends IComponentWithContext2NoHOCProps, IHOCDefaultNoThemeProps {}
-    const ComponentWithContext2: React.SFC<IComponentWithContext2Props> = (props, context: IThemeProviderContext) => {
+    const ComponentWithContext2: React.SFC<IComponentWithContext2Props> = (props: any, context: IThemeProviderContext) => {
       const { t } = props;
       return (
         <div {...t('root')}>
@@ -63,7 +63,6 @@ describe('theme-provider context with HOC test', () => {
     };
 
     const decoratorFn = themeDecorator({
-      context: true,
       contextPath: [THEME_PROVIDER_CONTEXT_KEY, 'ComponentWithContext2'],
     });
     const MyDecoratedComponent: React.SFC<IComponentWithContext2NoHOCProps> = decoratorFn(ComponentWithContext2);
