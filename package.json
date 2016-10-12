@@ -73,7 +73,7 @@
     "@types/lodash": "^4.14.37",
     "@types/merge2": "^0.3.29",
     "@types/object-path": "^0.9.28",
-    "@types/react": "^0.14.40",
+    "@types/react": "^0.14.39",
     "bluebird": "^3.4.6",
     "chai": "^3.5.0",
     "coveralls": "^2.11.14",
