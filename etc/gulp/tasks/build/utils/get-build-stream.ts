@@ -5,7 +5,6 @@ import * as gulp from 'gulp';
 import { Project } from 'gulp-typescript';
 import * as gTs from 'gulp-typescript';
 import * as gDebug from 'gulp-debug';
-import * as gFilter from 'gulp-filter';
 import * as mergeStream from 'merge2';
 
 const gSourcemaps = require('gulp-sourcemaps');
@@ -19,15 +18,7 @@ interface IGetBuildStream {
   taskName: string;
 }
 export const getBuildStream = ({ dest, tsProject, taskName }: IGetBuildStream) => {
-  // tsconfig does not correctly exclude files
-  // So exclude it here.
-  const fileFilter = gFilter([
-    '**',
-    '!**/*.spec.*',
-  ]);
-
   const tsResult = tsProject.src()
-    .pipe(fileFilter)
     .pipe(gSourcemaps.init())
     .pipe(tsProject(
       gTs.reporter.fullReporter(true)
