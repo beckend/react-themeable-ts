@@ -389,7 +389,7 @@ t('root');
 //  className: 'root-class'
 // }
 
-t('root', 'does-not-exist', null, undefined, 'another one');
+t('root', 'does-not-exist', null, undefined, 'another one', 'elephant);
 // {
 //  className: 'root-class'
 // }
@@ -503,6 +503,8 @@ Accepts single argument and is an object with props:
 | themeProp(optional) | `t` | `string` | The prop name passed prop to DecoratedComponent as the returned themeable function. |
 | memoizeeOpts(optional) | `{ length: 1, max: 10 }` | Object | options passed to [memoizee](https://github.com/medikoo/memoizee) function. |
 | contextPath(optional) | undefined | `string`/`string[]` | If truthy will be used as a path variable to navigate in context and will override `themeKey`. It accepts [object-path get method argument](https://github.com/mariocasciaro/object-path) to navigate in `context` prop. |
+
+
 
 
 ## Contributing
