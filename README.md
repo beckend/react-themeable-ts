@@ -315,7 +315,6 @@ import { PureComponent, PropTypes } from 'react';
 
 // First decorate a component with HOC
 const decoratorFn = themeDecorator({
-  context: true,
   contextPath: ['reactThemeable', 'ComponentWithContext2'],
   // or string with dots, see object-path get method https://github.com/mariocasciaro/object-path
   // contextPath: 'reactThemeable.ComponentWithContext2',
@@ -503,8 +502,7 @@ Accepts single argument and is an object with props:
 | themeKey(optional) | `theme` | `string` | The prop the HOC will use as argument for themeable. |
 | themeProp(optional) | `t` | `string` | The prop name passed prop to DecoratedComponent as the returned themeable function. |
 | memoizeeOpts(optional) | `{ length: 1, max: 10 }` | Object | options passed to [memoizee](https://github.com/medikoo/memoizee) function. |
-| context(optional) | false | `boolean` | Tells the component to look for the theme under the default context prop which is `reactThemeable` |
-| contextPath(optional/required) | 'reactThemeable' | `string`/`string[]` | Only used as a path variable to navigate in context when context is enabled. It accepts [object-path get method argument](https://github.com/mariocasciaro/object-path) to navigate in `context` prop. |
+| contextPath(optional) | undefined | `string`/`string[]` | If truthy will be used as a path variable to navigate in context and will override `themeKey`. It accepts [object-path get method argument](https://github.com/mariocasciaro/object-path) to navigate in `context` prop. |
 
 
 ## Contributing

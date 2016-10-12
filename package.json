@@ -1,6 +1,6 @@
 {
   "name": "react-themeable-ts",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "Handle classname and style props in React",
   "homepage": "https://github.com/beckend/react-themeable-ts#readme",
   "repository": {
@@ -70,7 +70,7 @@
     "@types/lodash": "^4.14.37",
     "@types/merge2": "^0.3.29",
     "@types/object-path": "^0.9.28",
-    "@types/react": "^0.14.39",
+    "@types/react": "^0.14.41",
     "bluebird": "^3.4.6",
     "chai": "^3.5.0",
     "coveralls": "^2.11.14",
@@ -89,7 +89,7 @@
     "react": "^15.3.2",
     "react-test-renderer": "^15.3.2",
     "ts-jest": "^0.1.7",
-    "ts-node": "^1.4.1",
+    "ts-node": "^1.4.3",
     "tslint": "^3.15.1",
     "tslint-microsoft-contrib": "^2.0.12",
     "typescript": "^2.0.3"

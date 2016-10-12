@@ -29,8 +29,7 @@ export interface IThemeDecoratorArgs {
   themeProp?: string;
   // options passed to https://github.com/medikoo/memoizee
   memoizeeOpts?: any;
-  // context if true will be used to navigate with "object-path" in context to find the theme object
-  context?: boolean;
+  // context if truthy will be used to navigate with "object-path" in context to find the theme object
   // If not using default context path
   contextPath?: string | string[];
 }
@@ -40,7 +39,6 @@ export interface IThemeDecoratorArgs {
 const hocDefaults = {
   themeKey: 'theme',
   themeProp: 't',
-  contextKey: THEME_PROVIDER_CONTEXT_KEY,
 };
 export interface IHOCDefaultNoThemeProps {
   t: IStaticFnReturn;
@@ -56,11 +54,8 @@ export function themeDecorator<P extends IThemeDecoratorArgs>({
   themeKey,
   themeProp,
   memoizeeOpts,
-  context,
   contextPath,
-}: IThemeDecoratorArgs = {
-  context: false,
-}) {
+}: IThemeDecoratorArgs = {}) {
   const getThemeableFnMemoized = memoize(getThemeableFn, memoizeeOpts || getThemeableFnDefaultMemoizeeOpts);
 
   const passedThemePropToChild = themeProp || hocDefaults.themeProp;
@@ -70,9 +65,9 @@ export function themeDecorator<P extends IThemeDecoratorArgs>({
     // tslint:disable-next-line
     const HOCThemeable: React.SFC<any> = ((props, contextArg: any) => {
       const passedThemeableFn = getThemeableFnMemoized(
-        context
+        contextPath
           ?
-            opGet(contextArg, contextPath || hocDefaults.contextKey)
+            opGet(contextArg, contextPath)
           :
             props[themeKey || hocDefaults.themeKey]
       );
