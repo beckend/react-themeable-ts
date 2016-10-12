@@ -5,7 +5,7 @@
 
 # react-themeable-ts
 
-Inpired by [react-themeable](https://github.com/markdalgleish/react-themeable) and [react-themr](https://github.com/javivelasco/react-css-themr).
+A CommonJS/es21015 module, inpired by [react-themeable](https://github.com/markdalgleish/react-themeable) and [react-themr](https://github.com/javivelasco/react-css-themr).
 
 
 Features:
