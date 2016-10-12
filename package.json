@@ -67,7 +67,6 @@
     "@types/fs-extra": "0.0.33",
     "@types/gulp": "^3.8.32",
     "@types/gulp-debug": "^2.0.29",
-    "@types/gulp-filter": "^3.0.29",
     "@types/gulp-typescript": "0.0.32",
     "@types/jest": "^15.1.32",
     "@types/lodash": "^4.14.37",
