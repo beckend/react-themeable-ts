@@ -6,7 +6,7 @@ before_script:
   - npm -g i gulp-cli jest-cli
 
 script:
-  - gulp
+  - npm run ci
 
 sudo: false
 
