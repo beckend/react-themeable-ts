@@ -389,7 +389,7 @@ t('root');
 //  className: 'root-class'
 // }
 
-t('root', 'does-not-exist', null, undefined, 'another one', 'elephant);
+t('root', 'does-not-exist', null, undefined, 'another one', 'elephant');
 // {
 //  className: 'root-class'
 // }
