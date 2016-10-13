@@ -526,5 +526,5 @@ Supports:
 - `jest`, needs `jest-cli` installed. it will execute the transpiled files from typescript.
 
 ### Dist
-- `npm run prepare:publish` will run default task which consist of running tasks:
+- `gulp` will run default task which consist of running tasks:
 - `lint`, `clean`, `build`, `minify` then `jest` and collect coverage.
