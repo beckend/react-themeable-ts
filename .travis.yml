@@ -3,10 +3,10 @@ node_js:
   - 6
 
 before_script:
-  - npm -g i gulp-cli jest-cli @types/react@0.14.39
+  - npm -g i gulp-cli jest-cli
 
 script:
-  - npm -D i @types/react@0.14.39 && npm run ci
+  - npm -D i @types/react@0.14.39 && gulp
 
 sudo: false
 
