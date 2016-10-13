@@ -85,6 +85,9 @@ import theme from './MyComponentTheme.css';
 import { StyleSheet, css } from 'aphrodite';
 
 const theme = StyleSheet.create({
+  root: {
+    color: 'black'
+  },
   foo: {
     color: 'red',
     ':hover': {
