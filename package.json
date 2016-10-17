@@ -86,8 +86,8 @@
     "merge2": "^1.0.2",
     "react": "^15.3.2",
     "react-test-renderer": "^15.3.2",
-    "ts-jest": "^0.1.7",
-    "ts-node": "^1.4.3",
+    "ts-jest": "^0.1.8",
+    "ts-node": "^1.6.0",
     "tslint": "^3.15.1",
     "tslint-microsoft-contrib": "^2.0.12",
     "typescript": "^2.0.3"

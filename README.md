@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/beckend/react-themeable-ts.svg?branch=master)](https://travis-ci.org/beckend/react-themeable-ts)
 [![Coverage Status](https://coveralls.io/repos/github/beckend/react-themeable-ts/badge.svg?branch=master)](https://coveralls.io/github/beckend/react-themeable-ts?branch=master)
+[![npm](https://img.shields.io/npm/v/react-themeable-ts.svg??maxAge=2592000)](https://www.npmjs.com/package/react-themeable-ts)
 [![Dependency Status](https://img.shields.io/david/beckend/react-themeable-ts.svg?maxAge=2592000)](https://david-dm.org/beckend/react-themeable-ts)
 [![DevDependency Status](https://img.shields.io/david/dev/beckend/react-themeable-ts.svg?maxAge=2592000)](https://david-dm.org/beckend/react-themeable-ts?type=dev)
 
