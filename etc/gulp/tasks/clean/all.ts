@@ -8,6 +8,5 @@ const gV4: any = gulp;
 gulp.task('clean:all', gV4.parallel(
   'clean:coverage',
   'clean:src',
-  'clean:src-es2015',
-  'clean:test'
+  'clean:src-es2015'
 ));
