@@ -78,7 +78,7 @@
     "enzyme": "^2.5.1",
     "fs-extra": "^0.30.0",
     "globby": "^6.0.0",
-    "google-closure-compiler-js": "^20160916.0.0",
+    "google-closure-compiler-js": "^20161024.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-debug": "^2.1.2",
     "gulp-run": "^1.7.1",
