@@ -324,7 +324,7 @@ const decoratorFn = themeDecorator({
   // contextPath: 'reactThemeable.ComponentWithContext2',
 });
 
-const ComponentWithContext = (props, context) => {
+const MyStatelessComponent = (props, context) => {
   const { t } = props;
   return (
     <div {...t('root')}>
@@ -341,7 +341,7 @@ MyStatelessComponent.contextTypes = {
   reactThemeable: PropTypes.object.isRequired,
 };
 
-const MyDecoratedComponent = decoratorFn(ComponentWithContext);
+const MyDecoratedComponent = decoratorFn(MyStatelessComponent);
 
 // Then use in theme provider
 // This works because the HOC comes with contextTypes enabled for prop reactThemeable.

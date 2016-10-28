@@ -5,7 +5,7 @@ node_js:
   - 6
 
 before_install:
-  - npm i -g npm@latest
+  - npm -g i npm@latest
 
 before_script:
   - npm -g i gulp-cli jest-cli
