@@ -117,7 +117,7 @@ interface IWriteAllFilesArgs {
   // Google closure compiler flags, will be merged with defaults above
   compilerFlags?: any;
 }
-export const writeAllFiles = async ({ filePaths, compilerFlags }: IWriteAllFilesArgs) => {
+export const writeAllFiles = ({ filePaths, compilerFlags }: IWriteAllFilesArgs) => {
   const writePromises: Bluebird.Thenable<any>[] = [];
   filePaths.forEach((filePath) => {
     writePromises.push(
