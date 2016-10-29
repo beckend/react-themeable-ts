@@ -514,6 +514,7 @@ Accepts single argument and is an object with props:
 ## Contributing
 
 ### Requires
+- `npm@4.x` because of `package.json` - `prepare` script. (only required to run hook when publish)
 - `npm -g i gulp-cli jest-cli`.
 
 ### Usage
