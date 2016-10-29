@@ -1,6 +1,6 @@
 {
   "name": "react-themeable-ts",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Handle classname and style props in React",
   "homepage": "https://github.com/beckend/react-themeable-ts#readme",
   "repository": {
