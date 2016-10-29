@@ -1,4 +1,6 @@
 .vscode
+build
+build-es2015
 coverage
 node_modules
 npm-debug.log
