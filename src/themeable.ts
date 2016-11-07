@@ -1,4 +1,5 @@
 import * as cn from 'classnames';
+import * as _ from 'lodash';
 
 const assign: typeof _.assign = require('lodash.assign');
 const isObject: typeof _.isObject = require('lodash.isobject');
