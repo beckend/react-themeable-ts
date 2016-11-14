@@ -11,8 +11,8 @@
     "url": "https://github.com/beckend/react-themeable-ts/issues"
   },
   "files": [
-    "build",
-    "build-es2015"
+    "build-es2015",
+    "build-es2017"
   ],
   "main": "./build-es2015/index.js",
   "jsnext:main": "./build-es2015/index.js",
