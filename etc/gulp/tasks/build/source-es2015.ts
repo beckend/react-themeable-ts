@@ -1,25 +1,18 @@
+/* tslint:disable: no-console */
 /**
  * es2015 build
  */
+import * as debugMod from 'debug';
 import * as gulp from 'gulp';
-import * as path from 'path';
-import {
-  PATH_SRC,
-  PATH_BUILD_ES2015,
-} from '../../config';
-import { createProject } from 'gulp-typescript';
-import { getBuildStream } from './utils/get-build-stream';
+import { cmdSpawn } from 'cmd-spawn';
 
-const taskName = 'build:src-es2015';
-
-gulp.task(taskName, () => {
-  const tsProject = createProject(
-    path.join(PATH_SRC, 'tsconfig.es2015.json')
-  );
-
-  return getBuildStream({
-    taskName,
-    tsProject,
-    dest: PATH_BUILD_ES2015,
-  });
+gulp.task('build:src-es2015', async () => {
+  const cmd = './node_modules/typescript/bin/tsc --p src/tsconfig-es2015.json';
+  const debug = debugMod('task-test');
+  debug(`running: ${cmd}`);
+  const r = await cmdSpawn(cmd, { buffer: true });
+  if (r) {
+    console.log(r.stdout);
+  }
+  debug(`finish: ${cmd}`);
 });

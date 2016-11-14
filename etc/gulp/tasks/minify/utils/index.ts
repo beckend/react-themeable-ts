@@ -70,6 +70,7 @@ interface IWriteSingleFileArgs {
   // Google closure compiler flags, will be merged with defaults above
   compilerFlags?: any;
 }
+// tslint:disable-next-line
 const writeSingleFile = async ({ filePath, compilerFlags }: IWriteSingleFileArgs) => {
   // First read the orignal file
   const source = await pReadFile(filePath, encoding);

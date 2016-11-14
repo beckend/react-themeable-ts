@@ -1,14 +1,22 @@
+/* tslint:disable: no-console */
 /**
  * Run jest and collect coverage
  */
 import * as gulp from 'gulp';
+import * as debugMod from 'debug';
 import {
   PATH_PACKAGE,
 } from '../config';
+import { cmdSpawn } from 'cmd-spawn';
 
-gulp.task('coverage', (done: Function) => {
-  const gRun = require('gulp-run');
+gulp.task('coverage', async () => {
   const pkg = require(PATH_PACKAGE);
-  const cmdRunJest = new gRun.Command(pkg.scripts['test:coverage']);
-  return cmdRunJest.exec(null, done);
+  const cmd = pkg.scripts['test:coverage'];
+  const debug = debugMod('task-coverage');
+  debug(`running: ${cmd}`);
+  const r = await cmdSpawn(cmd, { buffer: true });
+  if (r) {
+    console.log(r.stdout);
+  }
+  debug(`finish: ${cmd}`);
 });

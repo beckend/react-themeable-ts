@@ -6,7 +6,7 @@
 
 # react-themeable-ts
 
-A CommonJS/es2015 module, inspired by [react-themeable](https://github.com/markdalgleish/react-themeable) and [react-themr](https://github.com/javivelasco/react-css-themr).
+A CommonJS/ES2015/ES2017 module, inspired by [react-themeable](https://github.com/markdalgleish/react-themeable) and [react-themr](https://github.com/javivelasco/react-css-themr).
 
 
 Features:
@@ -197,14 +197,14 @@ import { themeDecorator } from 'react-themeable-ts';
 class MyComponent extends PureComponent {
 
   render() {
-    const theme = props.t;
+    const theme = this.props.t;
     return (
       <div {...theme('root')}>
         <span {...theme('span1')}>
-          My test SFC component
+          My test component
         </span>
         <p {...theme('p1')}>
-          My test SFC component
+          My test component
         </p>
       </div>
     );
@@ -238,14 +238,14 @@ import { themeDecorator } from 'react-themeable-ts';
 class MyComponent extends PureComponent {
 
   render() {
-    const theme = props.myThemeableFn;
+    const theme = this.props.myThemeableFn;
     return (
       <div {...theme('root')}>
         <span {...theme('span1')}>
-          My test SFC component
+          My test component
         </span>
         <p {...theme('p1')}>
-          My test SFC component
+          My test component
         </p>
       </div>
     );
