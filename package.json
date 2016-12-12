@@ -95,7 +95,7 @@
     "ts-jest": "^17.0.0",
     "ts-node": "^1.7.0",
     "tslint": "^3.15.1",
-    "tslint-microsoft-contrib": "^2.0.13",
+    "tslint-microsoft-contrib": "^4.0.0",
     "typescript": "^2.1.1"
   },
   "engines": {
