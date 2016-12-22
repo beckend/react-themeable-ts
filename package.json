@@ -76,7 +76,7 @@
     "@types/lodash": "^4.14.39",
     "@types/object-path": "^0.9.28",
     "@types/react": "^0.14.48",
-    "bluebird": "^3.4.6",
+    "bluebird": "^3.4.7",
     "chai": "^3.5.0",
     "cmd-spawn": "^1.2.0",
     "coveralls": "^2.11.15",
