@@ -76,7 +76,9 @@
     "@types/gulp-debug": "^2.0.29",
     "@types/jest": "^16.0.0",
     "@types/lodash": "^4.14.39",
-    "@types/object-path": "^0.9.28",
+    "@types/lodash.get": "^4.4.0",
+    "@types/lodash.isobject": "^3.0.0",
+    "@types/lodash.size": "^4.2.0",
     "@types/react": "^15.0.0",
     "@types/react-test-renderer": "^15.4.1",
     "bluebird": "^3.4.6",
@@ -84,7 +86,6 @@
     "cmd-spawn": "^1.2.0",
     "coveralls": "^2.11.15",
     "debug": "^2.3.2",
-    "enzyme": "^2.6.0",
     "fs-extra": "^1.0.0",
     "globby": "^6.1.0",
     "google-closure-compiler-js": "^20161201.0.0",
@@ -94,7 +95,6 @@
     "jest": "^18.1.0",
     "react": "^15.3.2",
     "react-test-renderer": "^15.3.2",
-    "shell-quote": "^1.6.1",
     "ts-jest": "^18.0.1",
     "ts-node": "^2.0.0",
     "tslint": "^4.3.1",
@@ -102,17 +102,15 @@
     "typescript": "^2.1.1"
   },
   "engines": {
-    "node": ">=6.7.0"
+    "node": ">=6.9.4"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "lodash.assign": "^4.2.0",
-    "lodash.isfunction": "^3.0.8",
+    "lodash.get": "^4.4.2",
     "lodash.isobject": "^3.0.2",
-    "lodash.isstring": "^4.0.1",
     "lodash.size": "^4.2.0",
     "memoizee": "^0.4.1",
-    "object-path": "^0.11.2"
+    "tslib": "^1.5.0"
   },
   "peerDependencies": {
     "react": ">=15.0.0"

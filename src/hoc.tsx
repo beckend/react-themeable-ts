@@ -2,7 +2,7 @@
 /**
  * HOC react component
  */
-import { get as opGet } from 'object-path';
+import lGet = require('lodash.get');
 import * as React from 'react';
 import { THEME_PROVIDER_CONTEXT_KEY } from './constants';
 import {
@@ -67,7 +67,7 @@ export function themeDecorator<P extends IThemeDecoratorArgs>({
       const passedThemeableFn = getThemeableFnMemoized(
         contextPath
           ?
-            opGet(contextArg, contextPath)
+            lGet(contextArg, contextPath)
           :
             props[themeKey || hocDefaults.themeKey],
       );

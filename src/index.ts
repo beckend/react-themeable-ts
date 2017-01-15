@@ -11,3 +11,8 @@ export {
   TDecComponent,
   themeDecorator,
 } from './hoc';
+export {
+  IThemeProviderProps,
+  IThemeProviderContext,
+  ThemeProvider,
+} from './theme-provider';

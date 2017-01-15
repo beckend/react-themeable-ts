@@ -1,9 +1,8 @@
 "use strict";
+var tslib_1 = require("tslib");
 var cn = require("classnames");
-var assign = require('lodash.assign');
-var isObject = require('lodash.isobject');
-var isFunction = require('lodash.isfunction');
-var size = require('lodash.size');
+var isObject = require("lodash.isobject");
+var size = require("lodash.size");
 /**
  * Memoizee
  */
@@ -21,7 +20,7 @@ exports.themeable = function (input) {
         return function () { return ({}); };
     }
     // Class decorator version (Aphrodite etc.)
-    if (isFunction(classNameDecorator)) {
+    if (typeof classNameDecorator === 'function') {
         var classNameDecoratorFn = function () {
             var names = [];
             for (var _i = 0; _i < arguments.length; _i++) {
@@ -65,8 +64,7 @@ exports.themeable = function (input) {
             }
             else if (isObject(themeValue)) {
                 // Will be treated as style
-                // Mutates object
-                assign(styleObj, themeValue);
+                styleObj = tslib_1.__assign({}, styleObj, themeValue);
             }
             else {
                 classNamesArgsArr.push(themeValue);

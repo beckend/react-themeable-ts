@@ -1,10 +1,7 @@
 import * as cn from 'classnames';
 import * as _ from 'lodash';
-
-const assign: typeof _.assign = require('lodash.assign');
-const isObject: typeof _.isObject = require('lodash.isobject');
-const isFunction: typeof _.isFunction = require('lodash.isfunction');
-const size: typeof _.size = require('lodash.size');
+import isObject = require('lodash.isobject');
+import size = require('lodash.size');
 
 /**
  * Memoizee
@@ -55,7 +52,7 @@ export const themeable: IStaticFn = (input?: any) => {
   }
 
   // Class decorator version (Aphrodite etc.)
-  if (isFunction(classNameDecorator)) {
+  if (typeof classNameDecorator === 'function') {
     const classNameDecoratorFn = (...names: any[]) => {
       if (names.length < 1) {
         return {};
@@ -98,8 +95,10 @@ export const themeable: IStaticFn = (input?: any) => {
         classNamesArgsArr.push(themeValue);
       } else if (isObject(themeValue)) {
         // Will be treated as style
-        // Mutates object
-        assign(styleObj, themeValue);
+        styleObj = {
+          ...styleObj,
+          ...themeValue,
+        };
       } else {
         classNamesArgsArr.push(themeValue);
       }
