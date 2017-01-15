@@ -11,11 +11,11 @@ class ThemeProvider extends React.PureComponent {
         return React.Children.only(this.props.children);
     }
 }
-exports.ThemeProvider = ThemeProvider;
 ThemeProvider.defaultProps = {
     [constants_1.THEME_PROVIDER_CONTEXT_KEY]: {},
 };
 ThemeProvider.childContextTypes = {
     [constants_1.THEME_PROVIDER_CONTEXT_KEY]: React.PropTypes.object.isRequired,
 };
+exports.ThemeProvider = ThemeProvider;
 //# sourceMappingURL=theme-provider.js.map

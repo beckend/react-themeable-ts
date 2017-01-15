@@ -1,4 +1,4 @@
 /**
  * Main gulpfile in typescript
  */
-import './etc/gulp';
+import './internals/gulp';

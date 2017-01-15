@@ -11,10 +11,10 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 /**
  * HOC react component
  */
-const React = require("react");
-const themeable_1 = require("./themeable");
-const constants_1 = require("./constants");
 const object_path_1 = require("object-path");
+const React = require("react");
+const constants_1 = require("./constants");
+const themeable_1 = require("./themeable");
 /**
  * Memoizee
  */

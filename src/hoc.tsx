@@ -2,13 +2,13 @@
 /**
  * HOC react component
  */
-import * as React from 'react';
-import {
-  themeable,
-  IStaticFnReturn,
-} from './themeable';
-import { THEME_PROVIDER_CONTEXT_KEY } from './constants';
 import { get as opGet } from 'object-path';
+import * as React from 'react';
+import { THEME_PROVIDER_CONTEXT_KEY } from './constants';
+import {
+  IStaticFnReturn,
+  themeable,
+} from './themeable';
 
 /**
  * Memoizee
@@ -69,7 +69,7 @@ export function themeDecorator<P extends IThemeDecoratorArgs>({
           ?
             opGet(contextArg, contextPath)
           :
-            props[themeKey || hocDefaults.themeKey]
+            props[themeKey || hocDefaults.themeKey],
       );
       const passedHOCProps = {
         [passedThemePropToChild]: passedThemeableFn,

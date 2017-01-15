@@ -1,7 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
+    "lib": [
+      "es5",
+      "es2015.promise",
+      "dom"
+    ],
     "declaration": true,
     "diagnostics": true,
     "outDir": "./../build-es5"

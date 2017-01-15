@@ -26,6 +26,8 @@ Features:
 ## Install
 
 `npm -S i react-themeable-ts`
+Or
+`yarn`
 
 ## Usage
 
@@ -515,7 +517,7 @@ Accepts single argument and is an object with props:
 
 ### Requires
 - `npm@4.x` because of `package.json` - `prepare` script. (only required to run hook when publish)
-- `npm -g i gulp-cli jest-cli`.
+- `npm -g i gulp-cli jest-cli` or `yarn global add gulp-cli jest-cli`.
 
 ### Usage
 - `gulp --tasks` to get going.

@@ -75,7 +75,7 @@ export const themeable: IStaticFn = (input?: any) => {
 
     return memoize(
       classNameDecoratorFn,
-      themeableDefaultMemoizeeOpts
+      themeableDefaultMemoizeeOpts,
     ) as typeof classNameDecoratorFn;
   }
 
@@ -118,6 +118,6 @@ export const themeable: IStaticFn = (input?: any) => {
 
   return memoize(
     regularFn,
-    themeableDefaultMemoizeeOpts
+    themeableDefaultMemoizeeOpts,
   ) as typeof regularFn;
 };
