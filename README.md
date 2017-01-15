@@ -26,6 +26,8 @@ Features:
 ## Install
 
 `npm -S i react-themeable-ts`
+Or
+`yarn`
 
 ## Usage
 
@@ -320,7 +322,7 @@ import { PureComponent, PropTypes } from 'react';
 // First decorate a component with HOC
 const decoratorFn = themeDecorator({
   contextPath: ['reactThemeable', 'ComponentWithContext2'],
-  // or string with dots, see object-path get method https://github.com/mariocasciaro/object-path
+  // or string with dots, see lodash.get method https://lodash.com/docs/4.17.4#get
   // contextPath: 'reactThemeable.ComponentWithContext2',
 });
 
@@ -506,7 +508,7 @@ Accepts single argument and is an object with props:
 | themeKey(optional) | `theme` | `string` | The prop the HOC will use as argument for themeable. |
 | themeProp(optional) | `t` | `string` | The prop name passed prop to DecoratedComponent as the returned themeable function. |
 | memoizeeOpts(optional) | `{ length: 1, max: 10 }` | Object | options passed to [memoizee](https://github.com/medikoo/memoizee) function. |
-| contextPath(optional) | undefined | `string`/`string[]` | If truthy will be used as a path variable to navigate in context and will override `themeKey`. It accepts [object-path get method argument](https://github.com/mariocasciaro/object-path) to navigate in `context` prop. |
+| contextPath(optional) | undefined | `string`/`string[]` | If truthy will be used as a path variable to navigate in context and will override `themeKey`. It accepts [lodash.get method argument](https://lodash.com/docs/4.17.4#get) to navigate in `context` prop. |
 
 
 
@@ -515,7 +517,7 @@ Accepts single argument and is an object with props:
 
 ### Requires
 - `npm@4.x` because of `package.json` - `prepare` script. (only required to run hook when publish)
-- `npm -g i gulp-cli jest-cli`.
+- `npm -g i gulp-cli jest-cli` or `yarn global add gulp-cli jest-cli`.
 
 ### Usage
 - `gulp --tasks` to get going.

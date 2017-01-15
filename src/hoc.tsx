@@ -2,13 +2,13 @@
 /**
  * HOC react component
  */
+import lGet = require('lodash.get');
 import * as React from 'react';
-import {
-  themeable,
-  IStaticFnReturn,
-} from './themeable';
 import { THEME_PROVIDER_CONTEXT_KEY } from './constants';
-import { get as opGet } from 'object-path';
+import {
+  IStaticFnReturn,
+  themeable,
+} from './themeable';
 
 /**
  * Memoizee
@@ -67,9 +67,9 @@ export function themeDecorator<P extends IThemeDecoratorArgs>({
       const passedThemeableFn = getThemeableFnMemoized(
         contextPath
           ?
-            opGet(contextArg, contextPath)
+            lGet(contextArg, contextPath)
           :
-            props[themeKey || hocDefaults.themeKey]
+            props[themeKey || hocDefaults.themeKey],
       );
       const passedHOCProps = {
         [passedThemePropToChild]: passedThemeableFn,

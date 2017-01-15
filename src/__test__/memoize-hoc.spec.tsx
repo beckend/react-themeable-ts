@@ -1,12 +1,12 @@
 /* tslint:disable: variable-name */
 import * as React from 'react';
+import * as renderer from 'react-test-renderer';
 import {
-  themeDecorator,
   IHOCDefaultNoThemeProps,
+  themeDecorator,
 } from '../hoc';
 
 const memProfile = require('memoizee/profile');
-const renderer = require('react-test-renderer');
 
 interface IMemoizeHOCTestProps {
   theme?: {
@@ -27,7 +27,7 @@ class MemoizeHOCTest extends React.PureComponent<IMemoizeHOCTestAllProps, IMemoi
     this.setState({
       hovered: 'true',
     });
-  };
+  }
 
   public _onMouseLeave = () => {
     this.setState({
@@ -57,7 +57,7 @@ describe('hoc - memoize works', () => {
         theme={{
           root: 'class-root',
         }}
-      />
+      />,
     );
     // cache miss at render
     const tree = component.toJSON();

@@ -1,16 +1,16 @@
 /* tslint:disable: variable-name */
+/* tslint:disable: max-line-length */
 import * as React from 'react';
-import {
-  ThemeProvider,
-  IThemeProviderContext,
-} from '../theme-provider';
+import * as renderer from 'react-test-renderer';
 import { THEME_PROVIDER_CONTEXT_KEY } from '../constants';
 import {
-  themeDecorator,
   IHOCDefaultNoThemeProps,
+  themeDecorator,
 } from '../hoc';
-
-const renderer = require('react-test-renderer');
+import {
+  IThemeProviderContext,
+  ThemeProvider,
+} from '../theme-provider';
 
 describe('theme-provider context tests', () => {
   it('basic pass all props', () => {
@@ -33,7 +33,7 @@ describe('theme-provider context tests', () => {
         }}
       >
         <ComponentWithContext1 />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -70,14 +70,14 @@ describe('theme-provider context with HOC test', () => {
       <ThemeProvider
         reactThemeable={{
           ComponentWithContext2: {
+            p1: 'class-p1',
             root: 'class-root',
             span1: 'class-span1',
-            p1: 'class-p1',
           },
         }}
       >
         <MyDecoratedComponent />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

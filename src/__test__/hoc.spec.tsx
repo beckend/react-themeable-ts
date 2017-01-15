@@ -1,8 +1,9 @@
 /* tslint:disable: variable-name */
+/* tslint:disable: max-classes-per-file */
 import * as React from 'react';
 import {
-  themeDecorator,
   IHOCDefaultNoThemeProps,
+  themeDecorator,
 } from '../hoc';
 import {
   IStaticFnReturn,
@@ -40,9 +41,9 @@ const MySFCComp: React.SFC<IMySFCCompProps> = (props) => {
  */
 interface IMySFCCompNoHOCCustomParamsProps {
   customThemeProp?: {
+    p1?: any;
     root?: any;
     span1?: any;
-    p1?: any;
   };
 }
 interface IMySFCCompCustomParamsProps extends IMySFCCompNoHOCCustomParamsProps {
@@ -87,7 +88,7 @@ describe('HOC basic functionality', () => {
         str1='ok'
         bool1
         number1={1338}
-      />
+      />,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -101,11 +102,11 @@ describe('HOC as function', () => {
     const component = renderer.create(
       <MyDecoratedComponent
         theme={{
+          p1: 'class-p1',
           root: 'class-root',
           span1: 'class-span1',
-          p1: 'class-p1',
         }}
-      />
+      />,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -120,11 +121,11 @@ describe('HOC as function', () => {
     const component = renderer.create(
       <MyDecoratedComponent
         customThemeProp={{
+          p1: 'class-p1',
           root: 'class-root',
           span1: 'class-span1',
-          p1: 'class-p1',
         }}
-      />
+      />,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -157,11 +158,11 @@ describe('HOC on class', () => {
     const component = renderer.create(
       <MyDecoratedComponent
         theme={{
+          p1: 'class-p1',
           root: 'class-root',
           span1: 'class-span1',
-          p1: 'class-p1',
         }}
-      />
+      />,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -191,11 +192,11 @@ describe('HOC on class', () => {
     const component = renderer.create(
       <HOCDecorateTestNOHocProps
         theme={{
+          p1: 'class-p1',
           root: 'class-root',
           span1: 'class-span1',
-          p1: 'class-p1',
         }}
-      />
+      />,
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

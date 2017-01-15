@@ -1,9 +1,8 @@
 "use strict";
+const tslib_1 = require("tslib");
 const cn = require("classnames");
-const assign = require('lodash.assign');
-const isObject = require('lodash.isobject');
-const isFunction = require('lodash.isfunction');
-const size = require('lodash.size');
+const isObject = require("lodash.isobject");
+const size = require("lodash.size");
 /**
  * Memoizee
  */
@@ -21,7 +20,7 @@ exports.themeable = (input) => {
         return () => ({});
     }
     // Class decorator version (Aphrodite etc.)
-    if (isFunction(classNameDecorator)) {
+    if (typeof classNameDecorator === 'function') {
         const classNameDecoratorFn = (...names) => {
             if (names.length < 1) {
                 return {};
@@ -57,8 +56,7 @@ exports.themeable = (input) => {
             }
             else if (isObject(themeValue)) {
                 // Will be treated as style
-                // Mutates object
-                assign(styleObj, themeValue);
+                styleObj = tslib_1.__assign({}, styleObj, themeValue);
             }
             else {
                 classNamesArgsArr.push(themeValue);

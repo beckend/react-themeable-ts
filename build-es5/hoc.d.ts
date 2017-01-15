@@ -1,7 +1,4 @@
 /// <reference types="react" />
-/**
- * HOC react component
- */
 import * as React from 'react';
 import { IStaticFnReturn } from './themeable';
 export declare type TDecComponent<P> = React.SFC<P> | React.ComponentClass<P>;

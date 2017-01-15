@@ -1,9 +1,10 @@
 /* tslint:disable: mocha-no-side-effect-code */
+/* tslint:disable: object-literal-sort-keys */
 /**
  * Main lib tests
  */
-import { themeable } from '../themeable';
 import { expect } from 'chai';
+import { themeable } from '../themeable';
 
 describe('empty', () => {
   it('no arguments', () => {
@@ -240,7 +241,7 @@ describe('advanced classnames with classnames module', () => {
       'base',
       'con1',
       'con2',
-      'con3'
+      'con3',
     ))
       .to.deep.equal({
         style: {

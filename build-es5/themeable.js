@@ -1,74 +1,80 @@
 "use strict";
-const cn = require("classnames");
-const assign = require('lodash.assign');
-const isObject = require('lodash.isobject');
-const isFunction = require('lodash.isfunction');
-const size = require('lodash.size');
+var tslib_1 = require("tslib");
+var cn = require("classnames");
+var isObject = require("lodash.isobject");
+var size = require("lodash.size");
 /**
  * Memoizee
  */
-const memoize = require('memoizee');
-const themeableDefaultMemoizeeOpts = {
+var memoize = require('memoizee');
+var themeableDefaultMemoizeeOpts = {
     length: false,
 };
-const truthy = (x) => x;
-exports.themeable = (input) => {
-    const [theme, classNameDecorator] = Array.isArray(input) && input.length === 2 ?
+var truthy = function (x) { return x; };
+exports.themeable = function (input) {
+    var _a = Array.isArray(input) && input.length === 2 ?
         input :
-        [input, null];
+        [input, null], theme = _a[0], classNameDecorator = _a[1];
     // Empty object if no theme
     if (!isObject(theme)) {
-        return () => ({});
+        return function () { return ({}); };
     }
     // Class decorator version (Aphrodite etc.)
-    if (isFunction(classNameDecorator)) {
-        const classNameDecoratorFn = (...names) => {
+    if (typeof classNameDecorator === 'function') {
+        var classNameDecoratorFn = function () {
+            var names = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+                names[_i] = arguments[_i];
+            }
             if (names.length < 1) {
                 return {};
             }
-            const styles = names
-                .map((name) => theme[name])
+            var styles = names
+                .map(function (name) { return theme[name]; })
                 .filter(truthy);
             if (!styles[0]) {
                 return {};
             }
             return {
-                className: classNameDecorator(...styles),
+                className: classNameDecorator.apply(void 0, styles),
             };
         };
         return memoize(classNameDecoratorFn, themeableDefaultMemoizeeOpts);
     }
     // Mix of className and style version
-    const regularFn = (...names) => {
+    var regularFn = function () {
+        var names = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            names[_i] = arguments[_i];
+        }
         if (names.length < 1) {
             return {};
         }
         // Will be merged if object is found
         // tslint:disable-next-line
-        let styleObj = {};
+        var styleObj = {};
         // Will be invoked through classnames
-        const classNamesArgsArr = [];
-        names.forEach((value) => {
+        var classNamesArgsArr = [];
+        names.forEach(function (value) {
             // Get from theme object
-            const themeValue = theme[value];
+            var themeValue = theme[value];
             // Array check first because it's also an object
             if (Array.isArray(themeValue)) {
                 classNamesArgsArr.push(themeValue);
             }
             else if (isObject(themeValue)) {
                 // Will be treated as style
-                // Mutates object
-                assign(styleObj, themeValue);
+                styleObj = tslib_1.__assign({}, styleObj, themeValue);
             }
             else {
                 classNamesArgsArr.push(themeValue);
             }
         });
-        const returned = {};
+        var returned = {};
         if (size(styleObj) > 0) {
             returned.style = styleObj;
         }
-        const finalClassname = cn(classNamesArgsArr);
+        var finalClassname = cn(classNamesArgsArr);
         if (finalClassname.length > 0) {
             returned.className = finalClassname;
         }
